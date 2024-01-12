@@ -120,12 +120,7 @@ if (WIN32 AND GLFW_BUILD_SHARED_LIBRARY)
     target_sources(glfw PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/glfw.rc")
 endif()
 
-if (UNIX AND GLFW_BUILD_SHARED_LIBRARY)
-    # On Unix-like systems, shared libraries can use the soname system.
-    set(GLFW_LIB_NAME glfw)
-else()
-    set(GLFW_LIB_NAME glfw3)
-endif()
+set(GLFW_LIB_NAME glfw)
 set(GLFW_LIB_NAME_SUFFIX "")
 
 set_target_properties(glfw PROPERTIES
